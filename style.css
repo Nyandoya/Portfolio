@@ -1,0 +1,412 @@
+*{/*universal selector for general formatting*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New';
+    box-sizing: border-box;
+}
+html{/*sets the menu tabs scroll for the entire page*/
+    scroll-behavior: smooth; /*smooth scrolling effect*/
+}
+body{
+    background: black;
+    color: white;
+}
+#header{
+    width:100%;
+    height: 100vh;
+    background-image: url(''); /*background image*/
+    background-size:cover;  /*covers the entire screen*/
+    background-position: justify; /*centers the image*/
+    position: relative; /*positioning the header*/
+}
+.container{
+    padding:10px 10%;   /*padding around the header*/
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*navigation menu settings*/
+nav {
+    position:absolute; /*navigation menu fixed at the top*/
+    top: 20px;
+    right: 20px; /*navigation menu aligned to the right*/
+    font-weight: bold;   
+    display: flex; /*image and links to be side by side*/
+    flex-wrap:wrap;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.logo{
+    width: 150px;  
+}
+
+/*navigation menu settings*/
+nav ul li{
+    display: inline-block;/*horizontal alignment*/
+    list-style: none;
+    margin: 10px 20px;
+    gap: 40px;
+}
+
+/*navigation links settings*/
+nav ul li a{
+    color: white;
+    text-decoration: none; /*removes underlines*/
+    font-size: 16px;
+    position: relative;
+}
+
+/*bottom highlight and hover effect on navigation links*/
+nav ul li a:hover::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: cyan;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: 0.5s;
+}
+.header-text{
+    margin-top:20%;
+    font-size:20px;    
+}
+.header-text h1 span{
+    font-size: 40px;
+    margin-top:20;
+    color:cyan
+}
+
+/* About Me Section*/
+.about{
+    padding: 40px 0; /*top and bottom padding around the word*/
+    color:cyan;
+    font-size: 20px;
+}
+.section-title{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: cyan;
+}
+.about-text{
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-style: oblique;
+}
+.tab-titles{
+    display : flex;
+    font-size: 30px;
+    margin: 20px 0 40px;
+    color: cyan;
+}
+.tab-links{
+    margin-right: 60px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight : bold;
+    position : relative;    
+}
+.tab-links::after{/*insert a line after the tab links*/
+    content: '';
+    width: 0%; /*makes the line hidden*/
+    height: 3px;
+    background: rgb(246, 2, 205);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{/*highlight only the active tab link*/
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    color: rgb(233, 106, 212);
+    font-weight: bold;  
+}
+.tab-contents{
+    display: none;/*hides the tab content until selected*/
+}
+.tab-contents.active-tab{
+    display: block;/*makes selected tab content visible*/
+}
+.tab-contents span{
+    color: cyan;
+    font-weight: bold;
+}
+
+/*Services section styling*/
+#Services{
+    font-size: 16px;
+    padding: 20px 0;
+}
+.services-list{
+    display: grid; /*arranges the services in a grid*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*3 columns*/
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+
+.services-list div{
+    background: rgb(65, 12, 56);
+    padding: 20px;
+    font-size: 14px;
+    font-weight:300;
+    border-radius:10px; /*rounded grid corners*/
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    color: cyan;
+    margin-bottom : 10px;
+}
+.services-list div h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.services-list div a{ /*services links*/
+    color: cyan;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 20px
+}
+.services-list div:hover{
+    background: rgb(128, 17, 109);
+    transform: translateY(-10px); /*moves the highlighted service up by 10px*/
+}
+
+/*My Portfolio Section Settings*/
+#Portfolio{
+    padding: 40px 0; /*top and bottom padding around the word*/
+}
+.Work-list{
+    display: grid; /*arranges the portfolio in a grid*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*3 columns*/
+    grid-gap: 30px;
+    margin-top: 30px;
+}
+.work{
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0%;/*makes the layer invisible-writings*/
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8));/* for gradient; from the darker, more transparent shade at the top (0.7 opacity) to a slightly more opaque one at the bottom */
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 16px;
+    transition: height 0.5s;
+}
+.layer h3{
+    color: rgb(42, 28, 230);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: rgb(42, 28, 230);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 60px;
+    border-radius: 50px;/*makes it a circle*/
+    background:rgb(128, 17, 109);/*link button background color*/
+    width: 60px;
+    height: 60px;
+}
+.work:hover img{
+    transform: scale(1.1); /*enlarges the image by 10%*/
+}
+.work:hover .layer{
+    height: 100%; /*makes the layer visible-writings*/
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(128, 17, 109);
+    color: cyan;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 20px auto;
+    width: fit-content;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: rgb(233, 106, 212);
+}
+.btn.btn2{
+    display: inline-block;
+    background: rgb(128, 17, 109);
+}
+.btn.btn2:hover{
+    background:rgb(246, 2, 205);
+}
+
+/*Contact Section Settings*/
+.row {
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between; /* Adds spacing */
+    align-items: center; /* Aligns items */
+}
+.contact-left, .contact-right {
+    width: 50%; /* Ensures two columns */
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+    margin-left: 20px;
+}
+.contact-left p{
+    margin-top: 30px;
+    font-size: 16px;
+}
+.contact-left p i{
+    color: rgb(165, 25, 142);
+    margin-right: 10px;
+    font-size: 20px;
+}
+.contact-left p span{
+    color:rgb(42, 28, 230);    
+}
+.social-icons{
+    display: flex;
+    margin-top: 30px;
+}   
+.social-icons a{
+    color: cyan;
+    font-size: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: rgb(233, 106, 212);
+    transform:translateY(-10px);
+}
+.contact-right form{
+    width:100%;
+}
+form input, form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: rgb(128, 17, 109);
+    color: cyan;
+    font-size: 16px;
+}
+form btn2{
+    padding: 12px 16px;
+    font-size: 22px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.Copyright{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    color:rgb(128, 17, 109);
+    font-size: 16px;
+}
+.Copyright i{
+    color: rgb(49, 177, 177);
+    margin-right: 10px;
+}
+nav .fa-solid{/*class for the icons link for smaller screen displays*/
+    display: none;/*hides the navigation menu on smaller screens*/
+}
+
+/*CSS Media Queries-For smaller display screens*/
+@media only screen and (max-width:750px){
+    #header{
+        background-image: url('images/pic1.png');
+        height: 100vh;
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1 span{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;/*hides the navigation menu on smaller screens*/
+        font-size: 20px;
+    }
+    nav ul{
+        background: rgb(128, 17, 109);
+        position: fixed;
+        top: 0;
+        right: -200px;/*hides nav menu on small screen untill when clicked on */
+        width: 200px;
+        height: 100vh;
+        padding-top: 40px;
+        z-index: 2;      
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block; /*vertical alignment*/
+        margin: 20px 0;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: cyan;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .subtitle{
+        font-size: 16px;
+    }
+    .tab-links{/*tab links to fit smaller screens*/
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .row {
+        flex-direction: column; /* Stacks on small screens */
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+        margin: 20px 0;
+        width: 100%; /* Full width on smaller screens */
+    }
+    .Copyright{
+        font-size: 14px;
+    }
+}
+#msg{
+    color: cyan;
+    margin-top:-20px;
+    display:block;
+}
