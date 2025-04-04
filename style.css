@@ -11,19 +11,17 @@ body{
     background: black;
     color: white;
 }
+
+/*Header Section Settings*/
 #header{
     width:100%;
-    height: 100vh;
-    background-image: url(''); /*background image*/
-    background-size:cover;  /*covers the entire screen*/
-    background-position: justify; /*centers the image*/
-    position: relative; /*positioning the header*/
+    height: 100vh;    
 }
-.container{
-    padding:10px 10%;   /*padding around the header*/
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.container {
+    width: 100%;
+    max-width: 1000px;  /* Or whatever maximum width you prefer */
+    margin: 0 auto;
+    padding: 0 20px;    /* Fixed padding instead of percentage */
 }
 
 /*navigation menu settings*/
@@ -51,7 +49,7 @@ nav ul li{
 
 /*navigation links settings*/
 nav ul li a{
-    color: white;
+    color: cyan;
     text-decoration: none; /*removes underlines*/
     font-size: 16px;
     position: relative;
@@ -69,13 +67,60 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 .header-text{
-    margin-top:20%;
-    font-size:20px;    
+    margin: top 5px;
+    font-size:20px;     
 }
 .header-text h1 span{
     font-size: 40px;
-    margin-top:20;
+    margin-top: 20px;
     color:cyan
+}
+.header-text h2{
+    font-size: 18px;
+    margin-top: 0;
+    color: rgb(128, 17, 109)
+}
+.header-text h4{
+    font-size: 16px;
+    margin-top: 0;   
+    color: white
+}
+.header-text h4 span{
+    font-size: 18px;
+    margin-top: 0;
+    color: rgb(128, 17, 109)
+}
+.header-image{
+    width: 100px; 
+    height: auto;
+    border-radius: 50%;   
+    margin-left: 20px;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+}
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between text and image */
+}
+
+.header-text {
+    max-width: 500px; /* Adjust text width */
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+/* Section Styling */
+section {
+    padding: 30px 20px;
 }
 
 /* About Me Section*/
@@ -283,6 +328,11 @@ nav ul li a:hover::after{
     flex-basis: 60%;
     margin-left: 20px;
 }
+.section-title{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: cyan;
+}
 .contact-left p{
     margin-top: 30px;
     font-size: 16px;
@@ -347,13 +397,13 @@ nav .fa-solid{/*class for the icons link for smaller screen displays*/
 }
 
 /*CSS Media Queries-For smaller display screens*/
-@media only screen and (max-width:750px){
+@media only screen and (max-width:750px){ 
     #header{
-        background-image: url('images/pic1.png');
+        background-image: url('');
         height: 100vh;
     }
     .header-text{
-        margin-top: 100%;
+        margin-top: 10px;
         font-size: 16px;
     }
     .header-text h1 span{
@@ -404,9 +454,9 @@ nav .fa-solid{/*class for the icons link for smaller screen displays*/
     .Copyright{
         font-size: 14px;
     }
-}
 #msg{
     color: cyan;
     margin-top:-20px;
     display:block;
+}
 }
