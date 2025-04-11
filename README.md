@@ -32,7 +32,7 @@ This is a personal portfolio website showcasing my skills, services, work experi
 No installation required - this is a static website. Simply open the *index.html* file in any modern web browser.
 
 ## How to Use 🧑‍🦯
-1. Clone this repository or download the ZIP file.
+1. Clone this repository or download the ZIP file.<br>
     https://github.com/Nyandoya/Portfolio.git
 
 2. Open the index.html file in your browser.
